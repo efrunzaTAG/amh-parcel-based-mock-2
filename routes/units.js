@@ -43,7 +43,7 @@ router.get('/', async function(req, res, next) {
       ]
     };
     if (BuildingID) {
-        data = {data: data.data.filter(x => x.BuildingID === BuildingID) };
+        data = {data: data.data.filter(x => x.BuildingID == BuildingID) };
     }
     res.json(data);
   } catch (err) {

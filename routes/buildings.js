@@ -35,7 +35,7 @@ router.get('/', async function(req, res, next) {
       ]
     };
     if (LotID) {
-        data = {data: data.data.filter(x => x.LotID === LotID) };
+        data = {data: data.data.filter(x => x.LotID == LotID) };
     }
     res.json(data);
   } catch (err) {
