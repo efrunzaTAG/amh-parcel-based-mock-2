@@ -3,8 +3,8 @@ const router = express.Router();
 
 router.get('/', async function(req, res, next) {
   try {
-    const BuildingID = req.query.BuildingID;
-    console.log(`BuildingID=${BuildingID}`);
+    const LotID = req.query.LotID;
+    console.log(`LotID=${LotID}`);
     console.log(`req.query`,req.query);
     let data = {
       "data": [

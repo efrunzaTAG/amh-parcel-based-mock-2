@@ -3,9 +3,7 @@ const router = express.Router();
 
 router.get('/', async function(req, res, next) {
   try {
-    const LotID = req.query.LotID;
-    console.log(`LotID=${LotID}`);
-    console.log(`req.query`,req.query);
+    //console.log(`req.query`,req.query);
     const data = {
       "data": [
           {
@@ -13,14 +11,16 @@ router.get('/', async function(req, res, next) {
               "OppID": 1,
               "ParcelNumber": "SubParcel1",
               "Address": "456 Side Rd",
-              "Status": "Raw"              
+              "Status": "Raw",
+              "Corner": false
           },
           {
               "LotID": 2,
               "OppID": 1,
               "ParcelNumber": "SubParcel2",
               "Address": "123 Main Str",
-              "Status": "Raw"
+              "Status": "Raw",
+              "Corner": true
           },     
       ]
     };
