@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 /* GET products listing. */
-router.get('/products', async function(req, res, next) {
+router.get('/', async function(req, res, next) {
   try {
     const productID = req.query.productID;
     const data = {
