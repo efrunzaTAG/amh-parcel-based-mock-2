@@ -5,7 +5,7 @@ router.get('/', async function(req, res, next) {
   try {
     const BuildingID = req.query.BuildingID;
     console.log(`BuildingID=${BuildingID}`);
-    console.log(`req.query`,req.query);
+    //console.log(`req.query`,req.query);
     let data = {
       "data": [
           {
@@ -42,7 +42,9 @@ router.get('/', async function(req, res, next) {
           },  
       ]
     };
-
+    if (BuildingID) {
+        data = {data: data.data.filter(x => x.BuildingID === BuildingID) };
+    }
     res.json(data);
   } catch (err) {
     console.error(`Error while getting buildings `, err.message);
