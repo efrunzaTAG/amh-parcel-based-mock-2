@@ -119,9 +119,9 @@ router.get('/GetOrdersByProduct', async function(req, res, next) {
       ]
     };
 
-    res.json(await quotes.getMultiple(req.query.page));
+    res.json(data);
   } catch (err) {
-    console.error(`Error while getting quotes `, err.message);
+    console.error(`Error while getting products `, err.message);
     res.status(err.statusCode || 500).json({'message': err.message});
   }
 });
@@ -131,9 +131,9 @@ router.post('/', async function(req, res, next) {
   try {
     res.json(await quotes.create(req.body));
   } catch (err) {
-    console.error(`Error while posting quotes `, err.message);
+    console.error(`Error while posting products `, err.message);
     res.status(err.statusCode || 500).json({'message': err.message});
   }
 });
 
-module.exports = router;
+module.exports = router;  
