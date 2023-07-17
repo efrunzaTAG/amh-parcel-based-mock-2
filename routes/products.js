@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const quotes = require('../services/quotes');
 
-/* GET quotes listing. */
-router.get('/GetOrdersByProduct', async function(req, res, next) {
+/* GET products listing. */
+router.get('/products', async function(req, res, next) {
   try {
     const productID = req.query.productID;
     const data = {
@@ -126,10 +125,10 @@ router.get('/GetOrdersByProduct', async function(req, res, next) {
   }
 });
 
-/* POST quotes */
+/* POST products */
 router.post('/', async function(req, res, next) {
-  try {
-    res.json(await quotes.create(req.body));
+  try {    
+    res.status(500).json({'message': 'not supported'});
   } catch (err) {
     console.error(`Error while posting products `, err.message);
     res.status(err.statusCode || 500).json({'message': err.message});
