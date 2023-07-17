@@ -5,6 +5,8 @@ const router = express.Router();
 router.get('/', async function(req, res, next) {
   try {
     const productID = req.query.productID;
+    console.log(`productID=${productID}`);
+    console.log(`req.query`,req.query);
     const data = {
       "data": [
           {

@@ -8,6 +8,9 @@ const cors = require('cors');
 var indexRouter = require('./routes/index');
 var quotesRouter = require('./routes/quotes');
 var productsRouter = require('./routes/products');
+var lotsRouter = require('./routes/lots');
+var buildingsRouter = require('./routes/buildings');
+var unitsRouter = require('./routes/units');
 
 var app = express();
 
@@ -26,5 +29,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/quotes', quotesRouter);
 app.use('/products', productsRouter);
+app.use('/lots', lotsRouter);
+app.use('/buildings', buildingsRouter);
+app.use('/units', unitsRouter);
 
 module.exports = app;
